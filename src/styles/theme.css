@@ -1,0 +1,32 @@
+/**
+ * テーマスタイル
+ * ダークテーマ・ライトテーマの切り替え
+ */
+
+/* 白基調テーマ */
+:root {
+  --theme-bg: #ffffff;
+  --theme-bg-secondary: #fafafa;
+  --theme-text: #171717;
+  --theme-text-secondary: #525252;
+  --theme-border: #e5e5e5;
+  --theme-border-light: #f5f5f5;
+  --theme-shadow: rgba(0, 0, 0, 0.08);
+  --theme-shadow-light: rgba(0, 0, 0, 0.04);
+}
+
+/* スムーズトランジション（ボタンなど特定要素は除外） */
+*:not(.btn):not(.btn *) {
+  transition: background-color var(--transition-base),
+              color var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+/* アクセシビリティ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+    animation: none;
+  }
+}

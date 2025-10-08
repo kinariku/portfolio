@@ -3,133 +3,386 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kinari Kuramoto - フリーランスデベロッパー＆デザイナー。アイデアを形にする、シンプルで洗練されたデジタル体験を創造します。" />
   <title>Kinari Kuramoto - Portfolio</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .container {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 4rem 3rem;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
-      width: 100%;
-    }
-
-    .profile-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 2rem;
-      overflow: hidden;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: #2c3e50;
-      letter-spacing: 1px;
-    }
-
-    .bio {
-      font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 2.5rem;
-      line-height: 1.8;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contact {
-      margin-top: 2rem;
-    }
-
-    .contact a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-    }
-
-    .contact a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 3rem 2rem;
-        margin: 1rem;
-      }
-      
-      h1 {
-        font-size: 2rem;
-      }
-      
-      .profile-image {
-        width: 100px;
-        height: 100px;
-        font-size: 2.5rem;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles/design-system.css">
+  <link rel="stylesheet" href="/src/styles/navigation.css">
+  <link rel="stylesheet" href="/src/styles/theme.css">
+  <link rel="stylesheet" href="/src/styles/language-toggle.css">
+  <link rel="stylesheet" href="/src/styles/portfolio.css">
 </head>
 <body>
-  <div class="container">
-    <div class="profile-image">
-      <img src="profile.png" alt="Kinari Kuramoto" />
+  <!-- Navigation -->
+  <div id="navigation"></div>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-greeting" data-i18n="hero.greeting">Hello, I'm</span>
+          <h1 class="hero-title">
+            <span class="hero-name" data-i18n="hero.name">Kinari Kuramoto</span>
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Developer & Designer</p>
+          <p class="hero-description" data-i18n="hero.description">
+            アイデアを形にする。<br>
+            シンプルで洗練されたデジタル体験を創造します。
+          </p>
+          <div class="hero-cta">
+            <a href="#works" class="btn btn-primary" data-i18n="hero.cta.works">作品を見る</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta.contact">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-card">
+            <img src="profile.png" alt="Kinari Kuramoto" class="profile-img" />
+            <div class="profile-decoration"></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span class="scroll-text" data-i18n="hero.scroll">Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number" data-i18n="about.number">01</span>
+          <h2 class="section-title" data-i18n="about.title">About</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-lead" data-i18n="about.lead">
+              フリーランスのエンジニアとして働きながら個人開発をしています。
+            </p>
+            <p class="about-description" data-i18n="about.description1">
+              デザインとコードの両方を扱い、アイデアを形にすることが好きです。
+              ユーザー体験を第一に考え、シンプルで美しく、使いやすいプロダクトを目指しています。
+            </p>
+            <p class="about-description" data-i18n="about.description2">
+              日々の実験や試行錯誤を通じて、新しいツールやサービスを試し、
+              小さなアイデアを形にしながら、より良いものづくりを追求しています。
+            </p>
+            <div class="about-location">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span data-i18n="about.location">Brisbane, Australia</span>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label" data-i18n="about.stats.experience">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label" data-i18n="about.stats.projects">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">30+</span>
+              <span class="stat-label" data-i18n="about.stats.clients">Happy Clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number" data-i18n="skills.number">02</span>
+          <h2 class="section-title" data-i18n="skills.title">Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="skill-category-title" data-i18n="skills.development">Development</h3>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <span class="skill-name">JavaScript / TypeScript</span>
+                <span class="skill-level" data-i18n="skills.level.expert">Expert</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">React / Next.js</span>
+                <span class="skill-level" data-i18n="skills.level.expert">Expert</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Node.js</span>
+                <span class="skill-level" data-i18n="skills.level.advanced">Advanced</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Python</span>
+                <span class="skill-level" data-i18n="skills.level.intermediate">Intermediate</span>
+              </li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title" data-i18n="skills.design">Design</h3>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <span class="skill-name">UI/UX Design</span>
+                <span class="skill-level" data-i18n="skills.level.expert">Expert</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Figma</span>
+                <span class="skill-level" data-i18n="skills.level.expert">Expert</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Adobe Creative Suite</span>
+                <span class="skill-level" data-i18n="skills.level.advanced">Advanced</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Prototyping</span>
+                <span class="skill-level" data-i18n="skills.level.advanced">Advanced</span>
+              </li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title" data-i18n="skills.tools">Tools</h3>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <span class="skill-name">Git / GitHub</span>
+                <span class="skill-level" data-i18n="skills.level.expert">Expert</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Docker</span>
+                <span class="skill-level" data-i18n="skills.level.advanced">Advanced</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">AWS</span>
+                <span class="skill-level" data-i18n="skills.level.intermediate">Intermediate</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">CI/CD</span>
+                <span class="skill-level" data-i18n="skills.level.advanced">Advanced</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number" data-i18n="works.number">03</span>
+          <h2 class="section-title" data-i18n="works.title">Works</h2>
+        </div>
+        <div class="works-grid">
+          <article class="work-card">
+            <div class="work-image">
+              <div class="work-placeholder">Project 1</div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">E-Commerce Platform</h3>
+              <p class="work-description">
+                モダンなECサイトの構築。React + Next.jsで高速なショッピング体験を実現。
+              </p>
+              <div class="work-tags">
+                <span class="work-tag">React</span>
+                <span class="work-tag">Next.js</span>
+                <span class="work-tag">TypeScript</span>
+              </div>
+            </div>
+          </article>
+          
+          <article class="work-card">
+            <div class="work-image">
+              <div class="work-placeholder">Project 2</div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Task Management App</h3>
+              <p class="work-description">
+                チーム向けタスク管理アプリ。直感的なUIと豊富な機能で生産性を向上。
+              </p>
+              <div class="work-tags">
+                <span class="work-tag">Vue.js</span>
+                <span class="work-tag">Firebase</span>
+                <span class="work-tag">Design</span>
+              </div>
+            </div>
+          </article>
+          
+          <article class="work-card">
+            <div class="work-image">
+              <div class="work-placeholder">Project 3</div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Portfolio Website</h3>
+              <p class="work-description">
+                クリエイター向けポートフォリオサイト。作品を美しく魅せるデザイン。
+              </p>
+              <div class="work-tags">
+                <span class="work-tag">HTML/CSS</span>
+                <span class="work-tag">JavaScript</span>
+                <span class="work-tag">Animation</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number" data-i18n="blog.number">04</span>
+          <h2 class="section-title" data-i18n="blog.title">Blog</h2>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-meta">
+              <time class="blog-date">2025.01.15</time>
+              <span class="blog-category">Tech</span>
+            </div>
+            <h3 class="blog-title">新しいツールを試してみた感想</h3>
+            <p class="blog-excerpt">
+              最近話題の開発ツールを実際に使ってみて、その使い心地や改善点について考えてみました。
+            </p>
+            <a href="https://note.com/kinari_kuramoto" class="blog-link" target="_blank" rel="noopener">
+              続きを読む
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-meta">
+              <time class="blog-date">2025.01.10</time>
+              <span class="blog-category">Design</span>
+            </div>
+            <h3 class="blog-title">ミニマルデザインの魅力</h3>
+            <p class="blog-excerpt">
+              シンプルで洗練されたデザインを追求する中で気づいた、ミニマリズムの本質について。
+            </p>
+            <a href="https://note.com/kinari_kuramoto" class="blog-link" target="_blank" rel="noopener">
+              続きを読む
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-meta">
+              <time class="blog-date">2025.01.05</time>
+              <span class="blog-category">Development</span>
+            </div>
+            <h3 class="blog-title">個人開発の進め方</h3>
+            <p class="blog-excerpt">
+              フリーランスとして働きながら個人開発を続けるための、時間管理とモチベーション維持の方法。
+            </p>
+            <a href="https://note.com/kinari_kuramoto" class="blog-link" target="_blank" rel="noopener">
+              続きを読む
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+        </div>
+        <div class="blog-cta">
+          <a href="https://note.com/kinari_kuramoto" class="btn btn-secondary" target="_blank" rel="noopener" data-i18n="blog.viewAll">
+            すべての記事を見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number" data-i18n="contact.number">05</span>
+          <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+        </div>
+        <div class="contact-content">
+          <div class="contact-text">
+            <h3 class="contact-heading" data-i18n="contact.heading">Let's work together</h3>
+            <p class="contact-description" data-i18n="contact.description">
+              プロジェクトのご相談、お仕事のご依頼など、<br>
+              お気軽にお問い合わせください。
+            </p>
+          </div>
+          <div class="contact-methods">
+            <a href="mailto:contact@kinarikuramoto.com" class="contact-method">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label" data-i18n="contact.email.label">Email</span>
+                <span class="contact-value">contact@kinarikuramoto.com</span>
+              </div>
+            </a>
+            <a href="https://x.com/kinari_kuramoto" class="contact-method" target="_blank" rel="noopener">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label" data-i18n="contact.twitter.label">X (Twitter)</span>
+                <span class="contact-value">@kinari_kuramoto</span>
+              </div>
+            </a>
+            <a href="https://github.com/kinariku" class="contact-method" target="_blank" rel="noopener">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label" data-i18n="contact.github.label">GitHub</span>
+                <span class="contact-value">@kinariku</span>
+              </div>
+            </a>
+            <a href="https://note.com/kinari_kuramoto" class="contact-method" target="_blank" rel="noopener">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label" data-i18n="contact.note.label">note</span>
+                <span class="contact-value">@kinari_kuramoto</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-text" data-i18n="footer.copyright">© 2025 Kinari Kuramoto. All rights reserved.</p>
+        <p class="footer-text" data-i18n="footer.tagline">Built with passion and attention to detail.</p>
+      </div>
     </div>
-    <h1>Kinari Kuramoto</h1>
-    <p class="bio">
-      フリーランスでアプリやWebをつくってます。アイデアを形にするのが好きで、デザインもコードもどっちも触ってます。
-    </p>
-    <div class="contact">
-      <a href="mailto:contact@kinarikuramoto.com">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        お問い合わせ
-      </a>
-    </div>
-  </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
