@@ -35,19 +35,26 @@ class PortfolioApp {
    */
   async start(): Promise<void> {
     try {
+      console.log('🚀 Starting Portfolio App initialization...')
+      
       // パフォーマンス最適化の初期化
+      console.log('⚡ Initializing performance optimizations...')
       this.initializePerformance()
       
       // ルート設定
+      console.log('🛣️ Setting up routes...')
       this.setupRoutes()
       
       // コンポーネント登録
+      console.log('🧩 Registering components...')
       await this.registerComponents()
       
       // アプリケーション開始
+      console.log('🎬 Starting app...')
       this.app.start()
       
       // 初期アニメーション
+      console.log('🎨 Initializing animations...')
       this.initializeAnimations()
       
       console.log('🚀 Portfolio App initialized successfully')
@@ -166,13 +173,34 @@ class PortfolioApp {
    * コンポーネント登録
    */
   private async registerComponents(): Promise<void> {
-    // ナビゲーションコンポーネント
-    const { NavigationComponent } = await import('./components/Navigation.ts')
-    this.app.registerComponent('navigation', new NavigationComponent('#navigation'))
-    
-    // 言語切り替えコンポーネント
-    const { LanguageToggleComponent } = await import('./components/LanguageToggle.ts')
-    this.app.registerComponent('language-toggle', new LanguageToggleComponent('#language-toggle'))
+    try {
+      console.log('🚀 Starting component registration...')
+      
+      // ナビゲーションコンポーネント
+      console.log('📦 Loading NavigationComponent...')
+      const { NavigationComponent } = await import('./components/Navigation.ts')
+      console.log('✅ NavigationComponent loaded')
+      
+      const navElement = document.querySelector('#navigation')
+      console.log('🎯 Navigation element found:', navElement)
+      
+      this.app.registerComponent('navigation', new NavigationComponent('#navigation'))
+      console.log('✅ NavigationComponent registered')
+      
+      // 言語切り替えコンポーネント
+      console.log('📦 Loading LanguageToggleComponent...')
+      const { LanguageToggleComponent } = await import('./components/LanguageToggle.ts')
+      console.log('✅ LanguageToggleComponent loaded')
+      
+      const langElement = document.querySelector('#language-toggle')
+      console.log('🎯 Language toggle element found:', langElement)
+      
+      this.app.registerComponent('language-toggle', new LanguageToggleComponent('#language-toggle'))
+      console.log('✅ LanguageToggleComponent registered')
+      
+    } catch (error) {
+      console.error('❌ Component registration failed:', error)
+    }
     
     // i18nの初期化
     this.i18nManager.initialize()
