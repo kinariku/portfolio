@@ -86,7 +86,7 @@ class PortfolioApp {
     )
     
     // プロフィール画像の事前読み込み
-    this.performanceManager.preloadResource('./profile.png', 'image')
+    this.performanceManager.preloadResource('/assets/images/profile.png', 'image')
   }
 
   /**

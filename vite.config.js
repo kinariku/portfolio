@@ -16,5 +16,12 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true
-  }
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.tsx', '.jsx']
+  },
+  esbuild: {
+    target: 'esnext'
+  },
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg']
 })
