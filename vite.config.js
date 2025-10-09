@@ -7,8 +7,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['gsap'],
-          utils: ['./src/utils/']
+          vendor: ['gsap']
         }
       }
     }
