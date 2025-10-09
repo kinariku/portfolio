@@ -8,6 +8,7 @@ import { PerformanceManager } from './utils/performance.js'
 import { AnimationManager } from './utils/animations.js'
 import { ThemeManager } from './utils/theme.js'
 import { I18nManager } from './utils/i18n.js'
+import { WorkDetailPage } from './pages/WorkDetail.js'
 import './styles/design-system.css'
 
 // アプリケーション初期化
@@ -24,6 +25,9 @@ class PortfolioApp {
     this.animationManager = AnimationManager.getInstance()
     this.themeManager = ThemeManager.getInstance()
     this.i18nManager = I18nManager.getInstance()
+    
+    // ルーティング初期化
+    this.initializeRouting()
   }
 
   /**
@@ -86,11 +90,76 @@ class PortfolioApp {
   }
 
   /**
+   * ルーティング初期化
+   */
+  private initializeRouting(): void {
+    // ハッシュ変更時のイベントリスナー
+    window.addEventListener('hashchange', () => this.handleRouteChange())
+    window.addEventListener('load', () => this.handleRouteChange())
+  }
+
+  /**
+   * ルート変更ハンドラ
+   */
+  private handleRouteChange(): void {
+    const hash = window.location.hash.slice(1) // # を削除
+    const appContainer = document.getElementById('app')
+    const mainContent = document.getElementById('main-content')
+    
+    if (!appContainer || !mainContent) return
+
+    // Work詳細ページへのルーティング
+    if (hash.startsWith('work/')) {
+      const workId = hash.replace('work/', '')
+      
+      // メインコンテンツを非表示
+      mainContent.style.display = 'none'
+      
+      // 既存の詳細ページを削除
+      const existingDetail = document.getElementById('work-detail-container')
+      if (existingDetail) {
+        existingDetail.remove()
+      }
+      
+      // 詳細ページコンテナを作成
+      const detailContainer = document.createElement('div')
+      detailContainer.id = 'work-detail-container'
+      appContainer.appendChild(detailContainer)
+      
+      // 詳細ページをレンダリング
+      const workDetailPage = new WorkDetailPage('#work-detail-container', workId)
+      workDetailPage.mount()
+      
+      // ページトップにスクロール
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      
+      // 翻訳を適用
+      this.updatePageTranslations()
+    } else {
+      // メインコンテンツを表示
+      mainContent.style.display = 'block'
+      
+      // 詳細ページコンテナを削除
+      const existingDetail = document.getElementById('work-detail-container')
+      if (existingDetail) {
+        existingDetail.remove()
+      }
+      
+      // ハッシュに基づいてスクロール
+      if (hash) {
+        const element = document.getElementById(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+    }
+  }
+
+  /**
    * ルート設定
    */
   private setupRoutes(): void {
-    // ルートは後で各セクションコンポーネントを作成した際に追加
-    // 現在は基本的なナビゲーションのみ実装
+    // ルーティングは initializeRouting() で処理
   }
 
   /**

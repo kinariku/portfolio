@@ -102,6 +102,38 @@ export const translations: Translations = {
     ja: '満足いただいたクライアント',
     en: 'Happy Clients'
   },
+  'about.career.university': {
+    ja: '2018',
+    en: '2018'
+  },
+  'about.career.universityName': {
+    ja: '法政大学入学',
+    en: 'Entered Hosei University'
+  },
+  'about.career.freelance': {
+    ja: '2019',
+    en: '2019'
+  },
+  'about.career.freelanceStart': {
+    ja: 'フリーランス活動開始',
+    en: 'Started freelancing'
+  },
+  'about.career.graduation': {
+    ja: '2022',
+    en: '2022'
+  },
+  'about.career.graduationName': {
+    ja: '法政大学卒業',
+    en: 'Graduated from Hosei University'
+  },
+  'about.career.australia': {
+    ja: '2025',
+    en: '2025'
+  },
+  'about.career.australiaMove': {
+    ja: 'オーストラリアに移住',
+    en: 'Moved to Australia'
+  },
 
   // Skills Section
   'skills.number': {
@@ -146,6 +178,46 @@ export const translations: Translations = {
     ja: 'Works',
     en: 'Works'
   },
+  'works.featured': {
+    ja: 'Featured Projects',
+    en: 'Featured Projects'
+  },
+  'works.viewAll': {
+    ja: 'すべての作品を見る',
+    en: 'View All Works'
+  },
+  'works.allWorks': {
+    ja: 'All Works',
+    en: 'All Works'
+  },
+  'works.allWorksDescription': {
+    ja: 'これまでに携わったプロジェクトの一覧です。',
+    en: 'A list of all projects I have worked on.'
+  },
+  'works.backToHome': {
+    ja: 'ホームに戻る',
+    en: 'Back to Home'
+  },
+  'works.filterBy': {
+    ja: 'フィルター:',
+    en: 'Filter by:'
+  },
+  'works.sortBy': {
+    ja: '並び替え:',
+    en: 'Sort by:'
+  },
+  'works.sortNewest': {
+    ja: '新しい順',
+    en: 'Newest First'
+  },
+  'works.sortOldest': {
+    ja: '古い順',
+    en: 'Oldest First'
+  },
+  'works.noResults': {
+    ja: '条件に一致する作品が見つかりませんでした。',
+    en: 'No works found matching your criteria.'
+  },
 
   // Blog Section
   'blog.number': {
@@ -156,13 +228,37 @@ export const translations: Translations = {
     ja: 'Blog',
     en: 'Blog'
   },
-  'blog.readMore': {
-    ja: '続きを読む',
-    en: 'Read More'
+  'blog.description': {
+    ja: 'それぞれの場所で、異なるテーマについて綴っています。',
+    en: 'Writing about different themes in different places.'
   },
-  'blog.viewAll': {
-    ja: 'すべての記事を見る',
-    en: 'View All Posts'
+  'blog.personal.title': {
+    ja: '個人ブログ',
+    en: 'Personal Blog'
+  },
+  'blog.personal.description': {
+    ja: '技術的な実験や試行錯誤、開発の記録を残しています。',
+    en: 'Technical experiments, trial and error, and development records.'
+  },
+  'blog.note.title': {
+    ja: 'note',
+    en: 'note'
+  },
+  'blog.note.description': {
+    ja: 'デザインや考え方、日々の気づきをエッセイ形式で。',
+    en: 'Design, thoughts, and daily insights in essay format.'
+  },
+  'blog.sizume.title': {
+    ja: 'しずかなインターネット',
+    en: 'しずかなインターネット'
+  },
+  'blog.sizume.description': {
+    ja: 'ゆっくりと、静かに。思索や内省的な文章を。',
+    en: 'Slowly and quietly. Contemplative and introspective writings.'
+  },
+  'blog.visit': {
+    ja: '訪れる →',
+    en: 'Visit →'
   },
 
   // Contact Section
@@ -207,6 +303,48 @@ export const translations: Translations = {
   'footer.tagline': {
     ja: 'Built with passion and attention to detail.',
     en: 'Built with passion and attention to detail.'
+  },
+
+  // Work Detail Page
+  'work.back': {
+    ja: '作品一覧に戻る',
+    en: 'Back to Works'
+  },
+  'work.role': {
+    ja: '役割',
+    en: 'Role'
+  },
+  'work.duration': {
+    ja: '期間',
+    en: 'Duration'
+  },
+  'work.tech': {
+    ja: '技術スタック',
+    en: 'Technologies'
+  },
+  'work.overview': {
+    ja: '概要',
+    en: 'Overview'
+  },
+  'work.features': {
+    ja: '主な機能',
+    en: 'Key Features'
+  },
+  'work.challenges': {
+    ja: '課題と解決',
+    en: 'Challenges'
+  },
+  'work.outcome': {
+    ja: '成果',
+    en: 'Outcome'
+  },
+  'work.visit': {
+    ja: 'ウェブサイトを見る',
+    en: 'Visit Website'
+  },
+  'work.related': {
+    ja: '関連する作品',
+    en: 'Related Works'
   }
 }
 

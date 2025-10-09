@@ -12,18 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="/src/styles/design-system.css">
-  <link rel="stylesheet" href="/src/styles/navigation.css">
-  <link rel="stylesheet" href="/src/styles/theme.css">
-  <link rel="stylesheet" href="/src/styles/language-toggle.css">
-  <link rel="stylesheet" href="/src/styles/portfolio.css">
+  <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
   <!-- Navigation -->
   <div id="navigation"></div>
   
+  <!-- App Container (for routing) -->
+  <div id="app">
   <!-- Main Content -->
-  <main>
+  <main id="main-content">
     <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="hero-content">
@@ -44,7 +42,7 @@
         </div>
         <div class="hero-image">
           <div class="profile-card">
-            <img src="profile.png" alt="Kinari Kuramoto" class="profile-img" />
+            <img src="/assets/images/profile.png" alt="Kinari Kuramoto" class="profile-img" />
             <div class="profile-decoration"></div>
           </div>
         </div>
@@ -184,14 +182,31 @@
           <h2 class="section-title" data-i18n="works.title">Works</h2>
         </div>
         <div class="works-grid">
-          <article class="work-card">
+          <a href="#work/saunakama" class="work-card">
             <div class="work-image">
-              <div class="work-placeholder">Project 1</div>
+              <div class="work-placeholder">Saunakama</div>
             </div>
             <div class="work-content">
-              <h3 class="work-title">E-Commerce Platform</h3>
+              <h3 class="work-title">サウナカマ</h3>
               <p class="work-description">
-                モダンなECサイトの構築。React + Next.jsで高速なショッピング体験を実現。
+                サウナコミュニティアプリの開発
+              </p>
+              <div class="work-tags">
+                <span class="work-tag">React Native</span>
+                <span class="work-tag">TypeScript</span>
+                <span class="work-tag">Firebase</span>
+              </div>
+            </div>
+          </a>
+          
+          <a href="#work/landest-nittetsu" class="work-card">
+            <div class="work-image">
+              <div class="work-placeholder">Landest</div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">ランデスト日鉄</h3>
+              <p class="work-description">
+                不動産プラットフォームの開発
               </p>
               <div class="work-tags">
                 <span class="work-tag">React</span>
@@ -199,41 +214,28 @@
                 <span class="work-tag">TypeScript</span>
               </div>
             </div>
-          </article>
+          </a>
           
-          <article class="work-card">
+          <a href="#work/chocotto-hoiku" class="work-card">
             <div class="work-image">
-              <div class="work-placeholder">Project 2</div>
+              <div class="work-placeholder">Chocotto</div>
             </div>
             <div class="work-content">
-              <h3 class="work-title">Task Management App</h3>
+              <h3 class="work-title">ちょこっと保育</h3>
               <p class="work-description">
-                チーム向けタスク管理アプリ。直感的なUIと豊富な機能で生産性を向上。
+                保育サービスアプリの開発
               </p>
               <div class="work-tags">
-                <span class="work-tag">Vue.js</span>
+                <span class="work-tag">React Native</span>
+                <span class="work-tag">TypeScript</span>
                 <span class="work-tag">Firebase</span>
-                <span class="work-tag">Design</span>
               </div>
             </div>
-          </article>
-          
-          <article class="work-card">
-            <div class="work-image">
-              <div class="work-placeholder">Project 3</div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">Portfolio Website</h3>
-              <p class="work-description">
-                クリエイター向けポートフォリオサイト。作品を美しく魅せるデザイン。
-              </p>
-              <div class="work-tags">
-                <span class="work-tag">HTML/CSS</span>
-                <span class="work-tag">JavaScript</span>
-                <span class="work-tag">Animation</span>
-              </div>
-            </div>
-          </article>
+          </a>
+        </div>
+        
+        <div class="works-cta">
+          <a href="works.html" class="btn btn-secondary" data-i18n="works.viewAll">すべての作品を見る</a>
         </div>
       </div>
     </section>
@@ -245,61 +247,43 @@
           <span class="section-number" data-i18n="blog.number">04</span>
           <h2 class="section-title" data-i18n="blog.title">Blog</h2>
         </div>
-        <div class="blog-grid">
-          <article class="blog-card">
-            <div class="blog-meta">
-              <time class="blog-date">2025.01.15</time>
-              <span class="blog-category">Tech</span>
-            </div>
-            <h3 class="blog-title">新しいツールを試してみた感想</h3>
-            <p class="blog-excerpt">
-              最近話題の開発ツールを実際に使ってみて、その使い心地や改善点について考えてみました。
-            </p>
-            <a href="https://note.com/kinari_kuramoto" class="blog-link" target="_blank" rel="noopener">
-              続きを読む
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        
+        <div class="blog-platforms">
+          <a href="https://blog.kinarikuramoto.com" class="blog-platform-card" target="_blank" rel="noopener">
+            <div class="platform-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </a>
-          </article>
+            </div>
+            <h3 class="platform-title" data-i18n="blog.personal.title">個人ブログ</h3>
+            <p class="platform-description" data-i18n="blog.personal.description">
+              技術的な実験や試行錯誤、開発の記録を残しています。
+            </p>
+            <span class="platform-link-text" data-i18n="blog.visit">訪れる →</span>
+          </a>
 
-          <article class="blog-card">
-            <div class="blog-meta">
-              <time class="blog-date">2025.01.10</time>
-              <span class="blog-category">Design</span>
+          <a href="https://note.com/kinari_kuramoto" class="blog-platform-card" target="_blank" rel="noopener">
+            <div class="platform-icon platform-icon-note">
+              <img src="/assets/images/note-logo.png" alt="note" width="32" height="32">
             </div>
-            <h3 class="blog-title">ミニマルデザインの魅力</h3>
-            <p class="blog-excerpt">
-              シンプルで洗練されたデザインを追求する中で気づいた、ミニマリズムの本質について。
+            <h3 class="platform-title" data-i18n="blog.note.title">note</h3>
+            <p class="platform-description" data-i18n="blog.note.description">
+              デザインや考え方、日々の気づきをエッセイ形式で。
             </p>
-            <a href="https://note.com/kinari_kuramoto" class="blog-link" target="_blank" rel="noopener">
-              続きを読む
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </article>
+            <span class="platform-link-text" data-i18n="blog.visit">訪れる →</span>
+          </a>
 
-          <article class="blog-card">
-            <div class="blog-meta">
-              <time class="blog-date">2025.01.05</time>
-              <span class="blog-category">Development</span>
+          <a href="https://sizu.me/kinari" class="blog-platform-card" target="_blank" rel="noopener">
+            <div class="platform-icon platform-icon-sizume">
+              <img src="/assets/images/sizume-logo.png" alt="しずかなインターネット" width="32" height="32">
             </div>
-            <h3 class="blog-title">個人開発の進め方</h3>
-            <p class="blog-excerpt">
-              フリーランスとして働きながら個人開発を続けるための、時間管理とモチベーション維持の方法。
+            <h3 class="platform-title" data-i18n="blog.sizume.title">しずかなインターネット</h3>
+            <p class="platform-description" data-i18n="blog.sizume.description">
+              ゆっくりと、静かに。思索や内省的な文章を。
             </p>
-            <a href="https://note.com/kinari_kuramoto" class="blog-link" target="_blank" rel="noopener">
-              続きを読む
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </article>
-        </div>
-        <div class="blog-cta">
-          <a href="https://note.com/kinari_kuramoto" class="btn btn-secondary" target="_blank" rel="noopener" data-i18n="blog.viewAll">
-            すべての記事を見る
+            <span class="platform-link-text" data-i18n="blog.visit">訪れる →</span>
           </a>
         </div>
       </div>
@@ -307,11 +291,11 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-      <div class="container">
+  <div class="container">
         <div class="section-header">
           <span class="section-number" data-i18n="contact.number">05</span>
           <h2 class="section-title" data-i18n="contact.title">Contact</h2>
-        </div>
+    </div>
         <div class="contact-content">
           <div class="contact-text">
             <h3 class="contact-heading" data-i18n="contact.heading">Let's work together</h3>
@@ -324,9 +308,9 @@
             <a href="mailto:contact@kinarikuramoto.com" class="contact-method">
               <div class="contact-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+          <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
               </div>
               <div class="contact-info">
                 <span class="contact-label" data-i18n="contact.email.label">Email</span>
@@ -354,23 +338,13 @@
                 <span class="contact-label" data-i18n="contact.github.label">GitHub</span>
                 <span class="contact-value">@kinariku</span>
               </div>
-            </a>
-            <a href="https://note.com/kinari_kuramoto" class="contact-method" target="_blank" rel="noopener">
-              <div class="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="currentColor"/>
-                </svg>
-              </div>
-              <div class="contact-info">
-                <span class="contact-label" data-i18n="contact.note.label">note</span>
-                <span class="contact-value">@kinari_kuramoto</span>
-              </div>
-            </a>
-          </div>
+      </a>
+    </div>
         </div>
       </div>
     </section>
   </main>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
