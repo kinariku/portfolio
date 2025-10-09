@@ -15,7 +15,10 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    open: true
+    open: true,
+    fs: {
+      strict: false
+    }
   },
   resolve: {
     extensions: ['.ts', '.js', '.tsx', '.jsx']
@@ -23,5 +26,8 @@ export default defineConfig({
   esbuild: {
     target: 'esnext'
   },
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg']
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
+  optimizeDeps: {
+    include: ['gsap']
+  }
 })
