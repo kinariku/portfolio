@@ -2,12 +2,12 @@
  * Works一覧ページのロジック
  */
 
-import { worksData, getWorksByChronological, getWorksByTag, getAllTags, WorkDetail } from './data/works.js'
-import { getWorks, convertMicroCMSWorkToWorkDetail, MicroCMSWork } from './utils/microcms.js'
-import { NavigationComponent } from './components/Navigation.js'
-import { LanguageToggleComponent } from './components/LanguageToggle.js'
-import { I18nManager } from './utils/i18n.js'
-import { AnimationManager } from './utils/animations.js'
+import { worksData, getWorksByChronological, getWorksByTag, getAllTags, WorkDetail } from './data/works.ts'
+import { getWorks, convertMicroCMSWorkToWorkDetail, MicroCMSWork } from './utils/microcms.ts'
+import { NavigationComponent } from './components/Navigation.ts'
+import { LanguageToggleComponent } from './components/LanguageToggle.ts'
+import { I18nManager } from './utils/i18n.ts'
+import { AnimationManager } from './utils/animations.ts'
 
 class WorksListPage {
   private i18nManager: I18nManager

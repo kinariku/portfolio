@@ -3,7 +3,7 @@
  * 再利用可能で堅牢なコンポーネントシステム
  */
 
-import { Component as IComponent } from './App.js'
+import { Component as IComponent } from './App.ts'
 
 export abstract class BaseComponent implements IComponent {
   public element: HTMLElement

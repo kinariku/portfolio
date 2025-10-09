@@ -3,12 +3,12 @@
  * フレームワークの初期化とアプリケーション起動
  */
 
-import { App } from './core/App.js'
-import { PerformanceManager } from './utils/performance.js'
-import { AnimationManager } from './utils/animations.js'
-import { ThemeManager } from './utils/theme.js'
-import { I18nManager } from './utils/i18n.js'
-import { WorkDetailPage } from './pages/WorkDetail.js'
+import { App } from './core/App.ts'
+import { PerformanceManager } from './utils/performance.ts'
+import { AnimationManager } from './utils/animations.ts'
+import { ThemeManager } from './utils/theme.ts'
+import { I18nManager } from './utils/i18n.ts'
+import { WorkDetailPage } from './pages/WorkDetail.ts'
 import './styles/design-system.css'
 
 // アプリケーション初期化
@@ -167,11 +167,11 @@ class PortfolioApp {
    */
   private async registerComponents(): Promise<void> {
     // ナビゲーションコンポーネント
-    const { NavigationComponent } = await import('./components/Navigation.js')
+    const { NavigationComponent } = await import('./components/Navigation.ts')
     this.app.registerComponent('navigation', new NavigationComponent('#navigation'))
     
     // 言語切り替えコンポーネント
-    const { LanguageToggleComponent } = await import('./components/LanguageToggle.js')
+    const { LanguageToggleComponent } = await import('./components/LanguageToggle.ts')
     this.app.registerComponent('language-toggle', new LanguageToggleComponent('#language-toggle'))
     
     // i18nの初期化

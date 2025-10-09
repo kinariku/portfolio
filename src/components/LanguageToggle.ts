@@ -3,8 +3,8 @@
  * 日本語と英語の切り替えボタン
  */
 
-import { BaseComponent } from '../core/Component.js'
-import { I18nManager, Language } from '../utils/i18n.js'
+import { BaseComponent } from '../core/Component.ts'
+import { I18nManager, Language } from '../utils/i18n.ts'
 
 export class LanguageToggleComponent extends BaseComponent {
   private i18n: I18nManager

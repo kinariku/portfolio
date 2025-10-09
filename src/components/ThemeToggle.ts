@@ -3,9 +3,9 @@
  * ダークテーマ・ライトテーマの切り替えボタン
  */
 
-import { BaseComponent } from '../core/Component.js'
-import { ThemeManager } from '../utils/theme.js'
-import { AnimationManager } from '../utils/animations.js'
+import { BaseComponent } from '../core/Component.ts'
+import { ThemeManager } from '../utils/theme.ts'
+import { AnimationManager } from '../utils/animations.ts'
 
 export class ThemeToggleComponent extends BaseComponent {
   private themeManager: ThemeManager

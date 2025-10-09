@@ -3,8 +3,8 @@
  * 洗練されたナビゲーションメニュー
  */
 
-import { BaseComponent } from '../core/Component.js'
-import { AnimationManager } from '../utils/animations.js'
+import { BaseComponent } from '../core/Component.ts'
+import { AnimationManager } from '../utils/animations.ts'
 
 export class NavigationComponent extends BaseComponent {
   private animationManager: AnimationManager

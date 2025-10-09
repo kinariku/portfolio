@@ -2,11 +2,11 @@
  * Work詳細ページコンポーネント
  */
 
-import { BaseComponent } from '../core/Component.js'
-import { WorkDetail, getWorkById, getRelatedWorks } from '../data/works.js'
-import { getWorkById as getMicroCMSWorkById, convertMicroCMSWorkToWorkDetail } from '../utils/microcms.js'
-import { I18nManager } from '../utils/i18n.js'
-import { AnimationManager } from '../utils/animations.js'
+import { BaseComponent } from '../core/Component.ts'
+import { WorkDetail, getWorkById, getRelatedWorks } from '../data/works.ts'
+import { getWorkById as getMicroCMSWorkById, convertMicroCMSWorkToWorkDetail } from '../utils/microcms.ts'
+import { I18nManager } from '../utils/i18n.ts'
+import { AnimationManager } from '../utils/animations.ts'
 
 export class WorkDetailPage extends BaseComponent {
   private workId: string
