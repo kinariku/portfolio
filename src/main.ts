@@ -3,12 +3,12 @@
  * フレームワークの初期化とアプリケーション起動
  */
 
-import { App } from './core/App.ts'
-import { PerformanceManager } from './utils/performance.ts'
-import { AnimationManager } from './utils/animations.ts'
-import { ThemeManager } from './utils/theme.ts'
-import { I18nManager } from './utils/i18n.ts'
-import { WorkDetailPage } from './pages/WorkDetail.ts'
+import { App } from './core/App'
+import { PerformanceManager } from './utils/performance'
+import { AnimationManager } from './utils/animations'
+import { ThemeManager } from './utils/theme'
+import { I18nManager } from './utils/i18n'
+import { WorkDetailPage } from './pages/WorkDetail'
 import './styles/design-system.css'
 
 // アプリケーション初期化
@@ -52,6 +52,10 @@ class PortfolioApp {
       // アプリケーション開始
       console.log('🎬 Starting app...')
       this.app.start()
+      
+      // テーマ初期化
+      console.log('🎨 Initializing theme...')
+      this.initializeTheme()
       
       // 初期アニメーション
       console.log('🎨 Initializing animations...')
@@ -178,7 +182,7 @@ class PortfolioApp {
       
       // ナビゲーションコンポーネント
       console.log('📦 Loading NavigationComponent...')
-      const { NavigationComponent } = await import('./components/Navigation.ts')
+      const { NavigationComponent } = await import('./components/Navigation')
       console.log('✅ NavigationComponent loaded')
       
       const navElement = document.querySelector('#navigation')
@@ -189,7 +193,7 @@ class PortfolioApp {
       
       // 言語切り替えコンポーネント
       console.log('📦 Loading LanguageToggleComponent...')
-      const { LanguageToggleComponent } = await import('./components/LanguageToggle.ts')
+      const { LanguageToggleComponent } = await import('./components/LanguageToggle')
       console.log('✅ LanguageToggleComponent loaded')
       
       const langElement = document.querySelector('#language-toggle')
@@ -212,6 +216,19 @@ class PortfolioApp {
     
     // 初回の翻訳適用
     this.updatePageTranslations()
+  }
+
+  /**
+   * テーマ初期化
+   */
+  private initializeTheme(): void {
+    // テーマの初期化（ThemeManagerのコンストラクタで自動実行される）
+    console.log('🎨 Theme initialized:', this.themeManager.getCurrentTheme())
+    
+    // テーマ変更時のハンドラー
+    this.themeManager.addThemeListener((theme) => {
+      console.log('🎨 Theme changed to:', theme)
+    })
   }
 
   /**

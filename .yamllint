@@ -1,0 +1,7 @@
+extends: default
+
+ignore: |
+  _headers
+  dist/
+  node_modules/
+

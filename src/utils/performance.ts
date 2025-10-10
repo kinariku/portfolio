@@ -90,7 +90,7 @@ export class PerformanceManager {
     // 動的インポートでコード分割
     const loadComponent = async (componentName: string) => {
       try {
-        const module = await import(`../components/${componentName}.ts` /* @vite-ignore */)
+        const module = await import(`../components/${componentName}` /* @vite-ignore */)
         return module.default
       } catch (error) {
         console.error(`Failed to load component: ${componentName}`, error)
