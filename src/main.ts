@@ -95,9 +95,12 @@ class PortfolioApp {
       'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap',
       'style'
     )
-    
+
     // プロフィール画像の事前読み込み
-    this.performanceManager.preloadResource('/assets/images/profile.png', 'image')
+    const profileImage = document.querySelector<HTMLImageElement>('.profile-img')
+    if (profileImage?.src) {
+      this.performanceManager.preloadResource(profileImage.src, 'image')
+    }
   }
 
   /**
@@ -296,20 +299,24 @@ class PortfolioApp {
   }
 }
 
-// DOM読み込み完了後にアプリケーション起動
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    const portfolioApp = new PortfolioApp()
-    portfolioApp.start()
-    
-    // グローバルに公開（デバッグ用）
-    ;(window as any).portfolioApp = portfolioApp
-  })
-} else {
-  // 既にDOMが読み込まれている場合
+const bootstrap = () => {
+  const existingApp = (window as any).portfolioApp as PortfolioApp | undefined
+  if (existingApp) {
+    return
+  }
+
   const portfolioApp = new PortfolioApp()
   portfolioApp.start()
+
+  // グローバルに公開（デバッグ用）
   ;(window as any).portfolioApp = portfolioApp
+}
+
+// DOM読み込み完了後にアプリケーション起動
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootstrap, { once: true })
+} else {
+  requestAnimationFrame(bootstrap)
 }
 
 // ページ離脱時のクリーンアップ
