@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/build-fallback.mjs",
     "build": "vite build",
     "preview": "vite preview",
+    "build:fallback": "node scripts/build-fallback.mjs",
     "lint": "eslint . --ext .js,.ts",
     "format": "prettier --write ."
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "esbuild": "^0.21.5",
     "eslint": "^8.0.0",
     "prettier": "^3.0.0",
     "terser": "^5.44.0",

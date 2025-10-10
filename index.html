@@ -357,6 +357,40 @@
   </footer>
 
   <!-- Scripts -->
-  <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="/src/main.ts" id="portfolio-app-entry"></script>
+  <script type="module">
+    const fallbackUrl = new URL(/* @vite-ignore */ './assets/app-fallback.js', import.meta.url).href
+
+    let fallbackLoaded = false
+
+    const loadFallbackBundle = async (reason) => {
+      if (fallbackLoaded) return
+      fallbackLoaded = true
+      try {
+        console.warn(`Loading fallback bundle due to: ${reason}`)
+        await import(fallbackUrl)
+      } catch (error) {
+        console.error('Failed to load fallback bundle', error)
+      }
+    }
+
+    const entryScript = document.getElementById('portfolio-app-entry')
+    if (entryScript) {
+      entryScript.addEventListener('error', () => {
+        loadFallbackBundle('module load error')
+      })
+
+      const checkAppBootstrapped = () => {
+        const appInstance = (window)?.portfolioApp
+        if (!appInstance) {
+          loadFallbackBundle('missing global app instance after bootstrap check')
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(checkAppBootstrapped, 2000)
+      })
+    }
+  </script>
 </body>
 </html>
